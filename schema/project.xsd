@@ -1,0 +1,87 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:element name="project" type="typProjekt"/>
+    <xsd:complexType name="typProjekt">
+        <xsd:sequence>
+            <xsd:element name="strona" type="typStrona"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+
+
+<!--_________________________________________________________-->
+      <xsd:complexType name="typStrona">
+        <xsd:sequence>
+            <xsd:element name="rysunki" type="typRysunki"/>
+            <xsd:element name="forum" type="typForum"/>
+              <xsd:element name="sklep" type="typSklep"/>
+      </xsd:sequence>
+      </xsd:complexType>
+
+
+
+<!--_________________________________________________________-->
+    <xsd:complexType name="typRysunki">
+        <xsd:sequence>
+            <xsd:element name="kategoria" type="typKategoria" maxOccurs="unbounded"/>
+         </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="typKategoria">
+        <xsd:sequence>
+               <xsd:element name="podkategoria" type="typPodkategoria"/>
+        </xsd:sequence>
+            <xsd:attribute name="nazwa_rysunek" type="xsd:string"/>
+    </xsd:complexType>
+    <xsd:complexType name="typPodkategoria">
+        <xsd:sequence>
+            <xsd:element name="nazwa" type="xsd:string"/>
+            <xsd:element name="autor" type="xsd:string"/>
+            <xsd:element name="rozmiar" type="xsd:float"/>
+            <xsd:element name="opis" type="xsd:string"/>
+            <xsd:element name="dlugosc" type="xsd:integer"/>
+            <xsd:element name="szerokosc" type="xsd:integer"/>
+        </xsd:sequence>
+        <xsd:attribute name="nazwa_rysunek" type="xsd:string"/>
+        <xsd:attribute name="id" type="xsd:integer"/>
+    </xsd:complexType>
+
+<!--_________________________________________________________-->
+    <xsd:complexType name="typForum">
+        <xsd:sequence>
+            <xsd:element name="dzial" type="typDzial" maxOccurs="unbounded"/>
+        </xsd:sequence>
+    </xsd:complexType>
+        <xsd:complexType name="typDzial">
+        <xsd:sequence>
+            <xsd:element name="temat" type="typTemat" maxOccurs="unbounded"/>
+        </xsd:sequence>
+            <xsd:attribute name="nazwa_dzial" type="xsd:string"/>
+    </xsd:complexType>
+    <xsd:complexType name="typTemat">
+        <xsd:sequence>
+            <xsd:element name="nazwa" type="xsd:string"/>
+            <xsd:element name="odpowiedzi" type="xsd:integer"/>
+            <xsd:element name="wyswietlenia" type="xsd:integer"/>
+        </xsd:sequence>
+        <xsd:attribute name="zatwierdzony" type="xsd:string"/>
+    </xsd:complexType>
+
+
+
+<!--_________________________________________________________-->
+    <xsd:complexType name="typSklep">
+        <xsd:sequence>
+            <xsd:element name="kategoria_sklep" type="typKategoriaSklep" minOccurs="2" maxOccurs="unbounded"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="typKategoriaSklep">
+        <xsd:sequence>
+            <xsd:element name="autor" type="xsd:string"/>
+            <xsd:element name="seria" type="xsd:string"/>
+            <xsd:element name="cena" type="xsd:positiveInteger"/>
+            <xsd:element name="cena_wysylki" type="xsd:unsignedInt"/>
+            <xsd:element name="czas_oczekiwania" type="xsd:string"/>
+        </xsd:sequence>
+        <xsd:attribute name="nazwa_sklep" type="xsd:string"/>
+    </xsd:complexType>
+
+</xsd:schema>

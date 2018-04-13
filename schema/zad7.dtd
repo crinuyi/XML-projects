@@ -1,0 +1,8 @@
+<!ATTLIST kategoria nazwa_rysunek CDATA #REQUIRED>
+<!ATTLIST podkategoria id ID #REQUIRED>
+<!ATTLIST podkategoria nazwa_rysunek CDATA #IMPLIED>
+<!ATTLIST opis numer_id IDREF #REQUIRED>
+<!ATTLIST dzial nazwa_dzial CDATA #REQUIRED>
+<!ATTLIST temat zatwierdzony CDATA #FIXED "tak">
+<!ATTLIST kategoria_sklep nazwa_sklep CDATA #REQUIRED>
+<!ATTLIST pojemnosc jaka_pojemnosc CDATA #FIXED "0,5L">

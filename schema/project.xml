@@ -59,12 +59,14 @@
                     <temat zatwierdzony="tak">
                         <nazwa>Ile kosztują promarkery?</nazwa>
                         <odpowiedzi>45</odpowiedzi>
+                        <rankingTematu>65</rankingTematu>
                         <wyswietlenia>4578</wyswietlenia>
                         <tematZwykly>1</tematZwykly>
                     </temat>
                     <temat zatwierdzony="tak">
                         <nazwa>Najtańszy kurs malarstwa (książka)</nazwa>
                         <odpowiedzi>3</odpowiedzi>
+                        <rankingTematu>62</rankingTematu>
                         <wyswietlenia>654</wyswietlenia>
                         <waznyTemat>1</waznyTemat>
                     </temat>
@@ -73,6 +75,7 @@
                 <temat zatwierdzony="tak">
                     <nazwa>Jak nauczyć się anatomii?</nazwa>
                     <odpowiedzi>656</odpowiedzi>
+                    <rankingTematu>4</rankingTematu>
                     <wyswietlenia>10765</wyswietlenia>
                     <tematZwykly>1</tematZwykly>
                 </temat>

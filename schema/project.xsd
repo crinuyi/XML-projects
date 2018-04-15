@@ -64,13 +64,26 @@
 
     <xsd:attributeGroup name="artybutyRysunki">
         <xsd:attribute name="nazwa_rysunek" type="xsd:string"/>
-        <xsd:attribute name="id" type="st:typIDRysunku"/>
+        <xsd:attribute name="id" type="st:typIDRysunku">
+        </xsd:attribute>
     </xsd:attributeGroup>
+
+
 
     <xsd:group name="grupaTemat">
         <xsd:sequence>
-            <xsd:element name="nazwa" type="xsd:string"/>
-            <xsd:element name="odpowiedzi" type="st:typOdpowiedzi"/>
+            <xsd:element name="nazwa" type="xsd:string">
+                <xsd:unique name="unikNazwa">
+                    <xsd:selector xpath="forum/dzial/temat"/>
+                    <xsd:field xpath="nazwa"/>
+                </xsd:unique>
+                <xsd:key name="unikNazwaID">
+                    <xsd:selector xpath="forum/dzial/temat"/>
+                    <xsd:field xpath="@id"/>
+                </xsd:key>
+            </xsd:element>
+            <xsd:element name="odpowiedzi" type="xsd:string"/>
+            <xsd:element name="rankingTematu" type="st:rankingTematu"/>
             <xsd:element name="wyswietlenia" type="xsd:integer"/>
             <xsd:choice>
             <xsd:element name="waznyTemat" type="xsd:boolean"/>

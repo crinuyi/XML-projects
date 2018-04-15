@@ -3,16 +3,23 @@
     <xsd:simpleType name="typOpis">
         <xsd:restriction base="xsd:string">
             <xsd:maxLength value="255"/>
-            <xsd:minInclusive value="30"/>
         </xsd:restriction>
     </xsd:simpleType>
 
     <xsd:simpleType name="typZatwierdzony">
-        <xsd:restriction base="xsd:string">
-            <xsd:enumeration value="tak"/>
-            <xsd:enumeration value="nie"/>
-            <xsd:length value="3"/>
-        </xsd:restriction>
+        <xsd:union>
+            <xsd:simpleType>
+                <xsd:restriction base="xsd:string">
+                    <xsd:enumeration value="tak"/>
+                    <xsd:enumeration value="nie"/>
+                    <xsd:length value="3"/>
+                </xsd:restriction>
+            </xsd:simpleType>
+
+            <xsd:simpleType>
+                <xsd:restriction base="xsd:boolean"/>
+            </xsd:simpleType>
+        </xsd:union>
     </xsd:simpleType>
 
     <xsd:simpleType name="typIDRysunku">
@@ -21,9 +28,10 @@
         </xsd:restriction>
     </xsd:simpleType>
 
-    <xsd:simpleType name="typOdpowiedz">
-        <xsd:restriction base="xsd:string">
+    <xsd:simpleType name="rankingTematu">
+        <xsd:restriction base="xsd:integer">
             <xsd:maxExclusive value="500"/>
+            <xsd:minInclusive value="1"/>
         </xsd:restriction>
     </xsd:simpleType>
 

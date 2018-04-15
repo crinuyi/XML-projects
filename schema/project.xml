@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:noNamespaceSchemaLocation="project.xsd">
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"	xsi:noNamespaceSchemaLocation="project.xsd">
+
 <strona>
     <rysunki>
         <kategoria nazwa_rysunek="rysunek cyfrowy">
@@ -60,11 +60,13 @@
                         <nazwa>Ile kosztują promarkery?</nazwa>
                         <odpowiedzi>45</odpowiedzi>
                         <wyswietlenia>4578</wyswietlenia>
+                        <tematZwykly>1</tematZwykly>
                     </temat>
                     <temat zatwierdzony="tak">
                         <nazwa>Najtańszy kurs malarstwa (książka)</nazwa>
                         <odpowiedzi>3</odpowiedzi>
                         <wyswietlenia>654</wyswietlenia>
+                        <waznyTemat>1</waznyTemat>
                     </temat>
             </dzial>
             <dzial nazwa_dzial="porady">
@@ -72,6 +74,7 @@
                     <nazwa>Jak nauczyć się anatomii?</nazwa>
                     <odpowiedzi>656</odpowiedzi>
                     <wyswietlenia>10765</wyswietlenia>
+                    <tematZwykly>1</tematZwykly>
                 </temat>
             </dzial>
     </forum>

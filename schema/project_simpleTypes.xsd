@@ -1,0 +1,34 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="TypyProste">
+
+    <xsd:simpleType name="typOpis">
+        <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="255"/>
+            <xsd:minInclusive value="30"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="typZatwierdzony">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="tak"/>
+            <xsd:enumeration value="nie"/>
+            <xsd:length value="3"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="typIDRysunku">
+        <xsd:restriction base="xsd:nonNegativeInteger">
+            <xsd:pattern value="[0-9]{3}"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="typOdpowiedz">
+        <xsd:restriction base="xsd:string">
+            <xsd:maxExclusive value="500"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="typOdpowiedzi">
+        <xsd:list itemType="xsd:string"/>
+    </xsd:simpleType>
+
+</xsd:schema>

@@ -1,4 +1,6 @@
-<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:st="TypyProste">
+<xsd:import schemaLocation="project_simpleTypes.xsd" namespace="TypyProste"/>
+
     <xsd:element name="project" type="typProjekt"/>
     <xsd:complexType name="typProjekt">
         <xsd:sequence>
@@ -32,16 +34,15 @@
             <xsd:attribute name="nazwa_rysunek" type="xsd:string"/>
     </xsd:complexType>
     <xsd:complexType name="typPodkategoria">
-        <xsd:sequence>
+        <xsd:sequence >
             <xsd:element name="nazwa" type="xsd:string"/>
             <xsd:element name="autor" type="xsd:string"/>
             <xsd:element name="rozmiar" type="xsd:float"/>
-            <xsd:element name="opis" type="xsd:string"/>
+            <xsd:element name="opis" type="st:typOpis"/>
             <xsd:element name="dlugosc" type="xsd:integer"/>
             <xsd:element name="szerokosc" type="xsd:integer"/>
         </xsd:sequence>
-        <xsd:attribute name="nazwa_rysunek" type="xsd:string"/>
-        <xsd:attribute name="id" type="xsd:integer"/>
+        <xsd:attributeGroup ref="artybutyRysunki"/>
     </xsd:complexType>
 
 <!--_________________________________________________________-->
@@ -57,15 +58,26 @@
             <xsd:attribute name="nazwa_dzial" type="xsd:string"/>
     </xsd:complexType>
     <xsd:complexType name="typTemat">
-        <xsd:sequence>
-            <xsd:element name="nazwa" type="xsd:string"/>
-            <xsd:element name="odpowiedzi" type="xsd:integer"/>
-            <xsd:element name="wyswietlenia" type="xsd:integer"/>
-        </xsd:sequence>
-        <xsd:attribute name="zatwierdzony" type="xsd:string"/>
+        <xsd:group ref="grupaTemat"/>
+        <xsd:attribute name="zatwierdzony" type="st:typZatwierdzony"/>
     </xsd:complexType>
 
+    <xsd:attributeGroup name="artybutyRysunki">
+        <xsd:attribute name="nazwa_rysunek" type="xsd:string"/>
+        <xsd:attribute name="id" type="st:typIDRysunku"/>
+    </xsd:attributeGroup>
 
+    <xsd:group name="grupaTemat">
+        <xsd:sequence>
+            <xsd:element name="nazwa" type="xsd:string"/>
+            <xsd:element name="odpowiedzi" type="st:typOdpowiedzi"/>
+            <xsd:element name="wyswietlenia" type="xsd:integer"/>
+            <xsd:choice>
+            <xsd:element name="waznyTemat" type="xsd:boolean"/>
+            <xsd:element name="tematZwykly" type="xsd:boolean"/>
+        </xsd:choice>
+        </xsd:sequence>
+    </xsd:group>
 
 <!--_________________________________________________________-->
     <xsd:complexType name="typSklep">
@@ -74,13 +86,13 @@
         </xsd:sequence>
     </xsd:complexType>
     <xsd:complexType name="typKategoriaSklep">
-        <xsd:sequence>
+        <xsd:all>
             <xsd:element name="autor" type="xsd:string"/>
             <xsd:element name="seria" type="xsd:string"/>
             <xsd:element name="cena" type="xsd:positiveInteger"/>
             <xsd:element name="cena_wysylki" type="xsd:unsignedInt"/>
-            <xsd:element name="czas_oczekiwania" type="xsd:string"/>
-        </xsd:sequence>
+            <xsd:element name="czas_oczekiwania" type="xsd:string" fixed="15 dni"/>
+        </xsd:all>
         <xsd:attribute name="nazwa_sklep" type="xsd:string"/>
     </xsd:complexType>
 

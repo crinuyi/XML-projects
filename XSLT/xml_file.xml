@@ -87,6 +87,7 @@
             <cena>56</cena>
             <cena_wysylki>12</cena_wysylki>
             <czas_oczekiwania>15 dni</czas_oczekiwania>
+            <dostepnosc>1</dostepnosc>
         </kategoria_sklep>
         <kategoria_sklep nazwa_sklep="koszulka">
             <autor>autor1</autor>
@@ -94,9 +95,7 @@
             <cena>40</cena>
             <cena_wysylki>12</cena_wysylki>
             <czas_oczekiwania>15 dni</czas_oczekiwania>
-            <specjalne>
-                <rozmiar>XL</rozmiar>
-            </specjalne>
+            <dostepnosc>1</dostepnosc>
         </kategoria_sklep>
         <kategoria_sklep nazwa_sklep="kubek">
             <autor>autor2</autor>
@@ -104,9 +103,7 @@
             <cena>20</cena>
             <cena_wysylki>6</cena_wysylki>
             <czas_oczekiwania>15 dni</czas_oczekiwania>
-            <specjalne>
-                <pojemnosc>1L</pojemnosc>
-            </specjalne>
+            <dostepnosc>1</dostepnosc>
         </kategoria_sklep>
         <kategoria_sklep nazwa_sklep="plakat">
             <autor>autor3</autor>
@@ -114,9 +111,7 @@
             <cena>7</cena>
             <cena_wysylki>2</cena_wysylki>
             <czas_oczekiwania>15 dni</czas_oczekiwania>
-            <specjalne>
-                <wymiary>20x25 cm</wymiary>
-            </specjalne>
+            <dostepnosc>0</dostepnosc>
         </kategoria_sklep>
     </sklep>
 </strona>

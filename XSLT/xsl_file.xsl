@@ -2,17 +2,29 @@
 <xsl:stylesheet
         version="1.0"
         xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+    <xsl:output method="xml" indent="yes"/>
+
+    <xsl:attribute-set name="podkreslenie">
+        <xsl:attribute name="style">text-decoration:underline;</xsl:attribute>
+    </xsl:attribute-set>
+
+
+    <xsl:variable name="wazne">
+        Oczekiwanie na produkt mo¿e wyd³u¿yæ siê o 5 dni roboczych!
+    </xsl:variable>
+
+    <xsl:key name="klucz" match="kategoria_sklep" use="seria"/>
 
     <xsl:template match="/">
-        <title>Projekt</title>
-    </xsl:template>
-    <xsl:template match="/">
+
+    <title>Projekt</title>
+
     <html>
         <head>
             <style type="text/css">
                 table {border: solid black 1px; border-collapse: collapse;}
                 td {border: solid black 1px; border-collapse: collapse;}
-</style>
+            </style>
         </head>
       <body>
           <table>
@@ -32,17 +44,19 @@
                                  <td>Opis</td>
                                  <td>D³ugo¶æ</td>
                                  <td>Szeroko¶æ</td>
+                                <td>Rodzaj rysunku</td>
                             </tr>
-                            <xsl:for-each select="rysunki/kategoria/podkategoria">
-                                    <tr>
-                                        <td><xsl:value-of select="nazwa"/></td>
-                                        <td><xsl:value-of select="autor"/></td>
-                                        <td><xsl:value-of select="rozmiar"/></td>
-                                        <td><xsl:value-of select="opis"/></td>
-                                        <td><xsl:value-of select="dlugosc"/></td>
-                                        <td><xsl:value-of select="szerokosc"/></td>
-                                    </tr>
-                            </xsl:for-each>
+                                <xsl:for-each select="rysunki/kategoria/podkategoria">
+                                        <tr>
+                                            <td><xsl:value-of select="nazwa"/></td>
+                                            <td><xsl:value-of select="autor"/></td>
+                                            <td><xsl:value-of select="rozmiar"/></td>
+                                            <td><xsl:value-of select="opis"/></td>
+                                            <td><xsl:value-of select="dlugosc"/></td>
+                                            <td><xsl:value-of select="szerokosc"/></td>
+                                            <td><xsl:value-of select="@nazwa_rysunek"/></td>
+                                        </tr>
+                                </xsl:for-each>
                         </table>
                     </td>
                     <td>
@@ -54,6 +68,7 @@
                                 <td>Wy¶wietlenia</td>
                             </tr>
                             <xsl:for-each select="forum/dzial/temat">
+                                <xsl:sort select="wyswietlenia"/>
                                 <xsl:if test="tematZwykly &gt; 0">
                                     <tr>
                                         <td><xsl:value-of select="nazwa"/></td>
@@ -64,9 +79,11 @@
                                 </xsl:if>
                             </xsl:for-each>
                         </table>
+                        £±czna ilo¶æ wy¶wietleñ: <xsl:number value="sum(//wyswietlenia)"/>
                     </td>
                     <td>
                         <table>
+                            <h4 xsl:use-attribute-sets="podkreslenie"><xsl:copy-of select="$wazne"/></h4>
                             <tr>
                                 <td>Autor</td>
                                 <td>Seria</td>
@@ -81,12 +98,21 @@
                                         <td><xsl:value-of select="cena"/></td>
                                         <td><xsl:value-of select="cena_wysylki"/></td>
                                         <td><xsl:value-of select="czas_oczekiwania"/></td>
-                                        <td><xsl:value-of select="specjalne">
-
-                                        </xsl:value-of></td>
+                                        <td><xsl:value-of select="specjalne"/></td>
+                                            <xsl:choose>
+                                                <xsl:when test="dostepnosc &gt; 0">
+                                                    <td bgcolor="#99ff66"></td>
+                                                </xsl:when>
+                                                <xsl:otherwise>
+                                                    <td bgcolor="#ff9966"></td>
+                                                </xsl:otherwise>
+                                            </xsl:choose>
                                     </tr>
                             </xsl:for-each>
                         </table>
+                        <xsl:for-each select="key('klucz','seria2')">
+                        <h5 xsl:use-attribute-sets="podkreslenie">Seria promowana w tym miesi±cu: <xsl:value-of select="seria"/></h5>
+                        </xsl:for-each>
                     </td>
                 </tr>
               </xsl:for-each>

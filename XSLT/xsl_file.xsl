@@ -4,6 +4,8 @@
         xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
     <xsl:output method="xml" indent="yes"/>
 
+    <xsl:param name="srednia_wielkosc_pliku"/>
+
     <xsl:attribute-set name="podkreslenie">
         <xsl:attribute name="style">text-decoration:underline;</xsl:attribute>
     </xsl:attribute-set>
@@ -50,7 +52,7 @@
                                         <tr>
                                             <td><xsl:value-of select="nazwa"/></td>
                                             <td><xsl:value-of select="autor"/></td>
-                                            <td><xsl:value-of select="rozmiar"/></td>
+                                            <td><xsl:value-of select="floor(rozmiar)"/></td>
                                             <td><xsl:value-of select="opis"/></td>
                                             <td><xsl:value-of select="dlugosc"/></td>
                                             <td><xsl:value-of select="szerokosc"/></td>
@@ -58,6 +60,12 @@
                                         </tr>
                                 </xsl:for-each>
                         </table>
+                        <xsl:variable name="suma_rozm" select="sum(//rozmiar)"/>
+                            Rozmiar rysunków na serwerze: <xsl:value-of select="$suma_rozm"/>
+                        <p>¦redni rozmiar pojedynczego rysunku na serwerze:
+                        <xsl:variable name="srednia" select="sum(//rozmiar) div count(*)"/>
+                            (zaokr±glone w górê): <xsl:value-of select="ceiling($srednia)"/>
+                        </p>
                     </td>
                     <td>
                         <table>

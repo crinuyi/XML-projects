@@ -2,7 +2,7 @@
 <xsl:stylesheet
         version="1.0"
         xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-    <xsl:output method="xml" indent="yes"/>
+    <xsl:output method="html" indent="yes"/>
 
     <xsl:param name="srednia_wielkosc_pliku"/>
 
@@ -77,7 +77,7 @@
                             </tr>
                             <xsl:for-each select="forum/dzial/temat">
                                 <xsl:sort select="wyswietlenia"/>
-                                <xsl:if test="tematZwykly &gt; 0">
+                                <xsl:if test="not(tematZwykly = 0)">
                                     <tr>
                                         <td><xsl:value-of select="nazwa"/></td>
                                         <td><xsl:value-of select="odpowiedzi"/></td>
@@ -91,28 +91,32 @@
                     </td>
                     <td>
                         <table>
-                            <h4 xsl:use-attribute-sets="podkreslenie"><xsl:copy-of select="$wazne"/></h4>
+                            <h4 xsl:use-attribute-sets="podkreslenie">
+                                <xsl:copy-of select="$wazne"/></h4>
                             <tr>
                                 <td>Autor</td>
                                 <td>Seria</td>
                                 <td>Cena</td>
                                 <td>Cena Wysy³ki</td>
-                                <td>Czas Oczekiwania</td>
+                                <td>CZAS OCZEKIWANIA</td>
                             </tr>
                             <xsl:for-each select="sklep/kategoria_sklep">
                                     <tr>
-                                        <td><xsl:value-of select="autor"/></td>
+                                        <td><xsl:copy>
+                                            <xsl:apply-templates select="current()/autor"/>
+                                            </xsl:copy>
+                                        </td>
                                         <td><xsl:value-of select="seria"/></td>
                                         <td><xsl:value-of select="cena"/></td>
                                         <td><xsl:value-of select="cena_wysylki"/></td>
-                                        <td><xsl:value-of select="czas_oczekiwania"/></td>
+                                        <td><xsl:value-of select="translate(czas_oczekiwania, 'abcdefghijklmnopqrstuvwxyz±æê³ñó¶¼¿','ABCDEFGHIJKLMNOPQRSTUVWXYZ¡ÆÊ£ÑÓ¦¬¯')"/></td>
                                         <td><xsl:value-of select="specjalne"/></td>
                                             <xsl:choose>
                                                 <xsl:when test="dostepnosc &gt; 0">
-                                                    <td bgcolor="#99ff66"></td>
+                                                    <td bgcolor="#99ff66"/>
                                                 </xsl:when>
                                                 <xsl:otherwise>
-                                                    <td bgcolor="#ff9966"></td>
+                                                    <td bgcolor="#ff9966"/>
                                                 </xsl:otherwise>
                                             </xsl:choose>
                                     </tr>

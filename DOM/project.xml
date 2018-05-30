@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<strona>
+    <sklep>
+        <kategoria_sklep nazwa_sklep="koszulka">
+            <autor>autor1</autor>
+            <seria>seria1</seria>
+            <cena>56</cena>
+            <cena_wysylki>12</cena_wysylki>
+            <czas_oczekiwania>15 dni</czas_oczekiwania>
+        </kategoria_sklep>
+    </sklep>
+</strona>

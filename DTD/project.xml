@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE deviantart SYSTEM "project.dtd" [
+        <!ENTITY fa "fanart">
+        <!ENTITY % rc SYSTEM "cd.xml">
+%rc;
+        ]>
+<deviantart>
+    <rysunki>
+        <kategoria nazwa_rysunek="%rc;">
+            <podkategoria nazwa_rysunek="krajobraz" id="A001">
+                <nazwa>rysunek1</nazwa>
+                <autor>nick1</autor>
+                <rozmiar>2MB</rozmiar>
+                <opis numer_id="A001">opis1</opis>
+                <dlugosc>2000px</dlugosc>
+                <szerokosc>1000px</szerokosc>
+            </podkategoria>
+        </kategoria>
+        <kategoria nazwa_rysunek="rysunek tradycyjny">
+            <podkategoria nazwa_rysunek="%fa;" id="A002">
+                <nazwa>rysunek2</nazwa>
+                <autor>nick2</autor>
+                <rozmiar>1,45MB</rozmiar>
+                <opis numer_id="A002">%pc;</opis>
+                <dlugosc>1500px</dlugosc>
+                <szerokosc>699px</szerokosc>
+            </podkategoria>
+        </kategoria>
+        <kategoria nazwa_rysunek="rysunek tradycyjny">
+            <podkategoria nazwa_rysunek="%fa;" id="A003">
+                <nazwa>rysunek3</nazwa>
+                <autor>nick3</autor>
+                <rozmiar>0,67MB</rozmiar>
+                <opis numer_id="A003">opis3</opis>
+                <dlugosc>200px</dlugosc>
+                <szerokosc>125px</szerokosc>
+            </podkategoria>
+        </kategoria>
+        <kategoria nazwa_rysunek="%rc;">
+            <podkategoria nazwa_rysunek="%fa;" id="A004">
+                <nazwa>rysunek4</nazwa>
+                <autor>nick4</autor>
+                <rozmiar>22MB</rozmiar>
+                <opis numer_id="A004">opis4</opis>
+                <dlugosc>6943px</dlugosc>
+                <szerokosc>5046px</szerokosc>
+            </podkategoria>
+        </kategoria>
+        <kategoria nazwa_rysunek="%rc;">
+            <podkategoria nazwa_rysunek="postać własna" id="A005">
+                <nazwa>rysunek5</nazwa>
+                <autor>nick5</autor>
+                <rozmiar>6MB</rozmiar>
+                <opis numer_id="A005">opis4</opis>
+                <dlugosc>2646px</dlugosc>
+                <szerokosc>1254px</szerokosc>
+            </podkategoria>
+        </kategoria>
+    </rysunki>
+    <forum>
+            <dzial nazwa_dzial="zakupy">
+                    <temat zatwierdzony="tak">
+                        <nazwa>Ile kosztują promarkery?</nazwa>
+                        <odpowiedzi>45</odpowiedzi>
+                        <wyswietlenia>4578</wyswietlenia>
+                    </temat>
+                    <temat zatwierdzony="tak">
+                        <nazwa>Najtańszy kurs malarstwa (książka)</nazwa>
+                        <odpowiedzi>3</odpowiedzi>
+                        <wyswietlenia>654</wyswietlenia>
+                    </temat>
+            </dzial>
+            <dzial nazwa_dzial="porady">
+                <temat zatwierdzony="tak">
+                    <nazwa>Jak nauczyć się anatomii?</nazwa>
+                    <odpowiedzi>656</odpowiedzi>
+                    <wyswietlenia>10765</wyswietlenia>
+                </temat>
+            </dzial>
+    </forum>
+    <sklep>
+        <kategoria_sklep nazwa_sklep="koszulka">
+            <autor>autor1</autor>
+            <seria>seria1</seria>
+            <cena>56 PLN</cena>
+            <cena_wysylki>12 PLN</cena_wysylki>
+            <czas_oczekiwania>15 dni</czas_oczekiwania>
+            <specjalne>
+                <rozmiar>M</rozmiar>
+            </specjalne>
+        </kategoria_sklep>
+        <kategoria_sklep nazwa_sklep="koszulka">
+            <autor>autor1</autor>
+            <seria>seria2</seria>
+            <cena>40 PLN</cena>
+            <cena_wysylki>12 PLN</cena_wysylki>
+            <czas_oczekiwania>15 dni</czas_oczekiwania>
+            <specjalne>
+                <rozmiar>XL</rozmiar>
+            </specjalne>
+        </kategoria_sklep>
+        <kategoria_sklep nazwa_sklep="kubek">
+            <autor>autor2</autor>
+            <seria>seria1</seria>
+            <cena>20 PLN</cena>
+            <cena_wysylki>6 PLN</cena_wysylki>
+            <czas_oczekiwania>15 dni</czas_oczekiwania>
+            <specjalne>
+                <pojemnosc jaka_pojemnosc="0,5L"/>
+            </specjalne>
+        </kategoria_sklep>
+        <kategoria_sklep nazwa_sklep="plakat">
+            <autor>autor3</autor>
+            <seria>seria3</seria>
+            <cena>7 PLN</cena>
+            <cena_wysylki>2 PLN</cena_wysylki>
+            <czas_oczekiwania>15 dni</czas_oczekiwania>
+            <specjalne>
+                <wymiary>20x25 cm</wymiary>
+            </specjalne>
+        </kategoria_sklep>
+    </sklep>
+</deviantart>

@@ -1,0 +1,38 @@
+<!ENTITY % pc "#PCDATA">
+<!ELEMENT deviantart (rysunki, forum, sklep)>
+    <!ELEMENT rysunki (kategoria*)>
+        <!ELEMENT kategoria (podkategoria)>
+            <!ELEMENT nazwa_rysunek (%pc;)>
+            <!ATTLIST kategoria nazwa_rysunek CDATA #REQUIRED>
+            <!ELEMENT podkategoria (nazwa, autor, rozmiar, opis?, dlugosc, szerokosc)>
+                <!ELEMENT id (%pc;)>
+                <!ATTLIST podkategoria id ID #REQUIRED>
+                <!ATTLIST podkategoria nazwa_rysunek CDATA #IMPLIED>
+                <!ELEMENT nazwa (%pc;)>
+                <!ELEMENT autor (%pc;)>
+                <!ELEMENT rozmiar (%pc;)>
+                <!ELEMENT opis ANY>
+                <!ELEMENT numer_id (%pc;)>
+                <!ATTLIST opis numer_id IDREF #REQUIRED>
+                <!ELEMENT dlugosc (%pc;)>
+                <!ELEMENT szerokosc (%pc;)>
+    <!ELEMENT forum (dzial*)>
+        <!ELEMENT dzial (temat*)>
+            <!ATTLIST dzial nazwa_dzial CDATA #REQUIRED>
+        <!ELEMENT temat (nazwa, odpowiedzi, wyswietlenia)>
+            <!ELEMENT zatwierdzony (%pc;)>
+            <!ATTLIST temat zatwierdzony CDATA #FIXED "tak">
+            <!ELEMENT odpowiedzi (%pc;)>
+            <!ELEMENT wyswietlenia (%pc;)>
+    <!ELEMENT sklep (kategoria_sklep*)>
+        <!ELEMENT kategoria_sklep (autor, seria, cena, cena_wysylki, czas_oczekiwania, specjalne)>
+            <!ATTLIST kategoria_sklep nazwa_sklep CDATA #REQUIRED>
+            <!ELEMENT seria (%pc;)>
+            <!ELEMENT cena (%pc;)>
+            <!ELEMENT cena_wysylki (%pc;)>
+            <!ELEMENT czas_oczekiwania (%pc;)>
+            <!ELEMENT specjalne (rozmiar|pojemnosc|wymiary)>
+            <!ELEMENT pojemnosc (%pc;)>
+            <!ELEMENT wymiary (%pc;)>
+            <!ELEMENT jaka_pojemnosc (%pc;)>
+            <!ATTLIST pojemnosc jaka_pojemnosc CDATA #FIXED "0,5L">

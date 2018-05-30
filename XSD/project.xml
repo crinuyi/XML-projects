@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"	xsi:noNamespaceSchemaLocation="project.xsd">
+
+<strona>
+    <rysunki>
+        <kategoria nazwa_rysunek="rysunek cyfrowy">
+            <podkategoria nazwa_rysunek="krajobraz" id="001">
+                <nazwa>rysunek1</nazwa>
+                <autor>nick1</autor>
+                <rozmiar>2</rozmiar>
+                <opis>opis1</opis>
+                <dlugosc>2000</dlugosc>
+                <szerokosc>1000</szerokosc>
+            </podkategoria>
+        </kategoria>
+        <kategoria nazwa_rysunek="rysunek tradycyjny">
+            <podkategoria nazwa_rysunek="fanart" id="002">
+                <nazwa>rysunek2</nazwa>
+                <autor>nick2</autor>
+                <rozmiar>1.45</rozmiar>
+                <opis>opis2</opis>
+                <dlugosc>1500</dlugosc>
+                <szerokosc>699</szerokosc>
+            </podkategoria>
+        </kategoria>
+        <kategoria nazwa_rysunek="rysunek tradycyjny">
+            <podkategoria nazwa_rysunek="fanart" id="003">
+                <nazwa>rysunek3</nazwa>
+                <autor>nick3</autor>
+                <rozmiar>0.67</rozmiar>
+                <opis>opis3</opis>
+                <dlugosc>200</dlugosc>
+                <szerokosc>125</szerokosc>
+            </podkategoria>
+        </kategoria>
+        <kategoria nazwa_rysunek="rysunek cyfrowy">
+            <podkategoria nazwa_rysunek="fanart" id="004">
+                <nazwa>rysunek4</nazwa>
+                <autor>nick4</autor>
+                <rozmiar>22</rozmiar>
+                <opis>opis4</opis>
+                <dlugosc>6943</dlugosc>
+                <szerokosc>5046</szerokosc>
+            </podkategoria>
+        </kategoria>
+        <kategoria nazwa_rysunek="rysunek cyfrowy">
+            <podkategoria nazwa_rysunek="postać własna" id="005">
+                <nazwa>rysunek5</nazwa>
+                <autor>nick5</autor>
+                <rozmiar>6</rozmiar>
+                <opis>opis4</opis>
+                <dlugosc>2646</dlugosc>
+                <szerokosc>1254</szerokosc>
+            </podkategoria>
+        </kategoria>
+    </rysunki>
+    <forum>
+            <dzial nazwa_dzial="zakupy">
+                    <temat zatwierdzony="tak">
+                        <nazwa>Ile kosztują promarkery?</nazwa>
+                        <odpowiedzi>45</odpowiedzi>
+                        <rankingTematu>65</rankingTematu>
+                        <wyswietlenia>4578</wyswietlenia>
+                        <tematZwykly>1</tematZwykly>
+                    </temat>
+                    <temat zatwierdzony="tak">
+                        <nazwa>Najtańszy kurs malarstwa (książka)</nazwa>
+                        <odpowiedzi>3</odpowiedzi>
+                        <rankingTematu>62</rankingTematu>
+                        <wyswietlenia>654</wyswietlenia>
+                        <waznyTemat>1</waznyTemat>
+                    </temat>
+            </dzial>
+            <dzial nazwa_dzial="porady">
+                <temat zatwierdzony="tak">
+                    <nazwa>Jak nauczyć się anatomii?</nazwa>
+                    <odpowiedzi>656</odpowiedzi>
+                    <rankingTematu>4</rankingTematu>
+                    <wyswietlenia>10765</wyswietlenia>
+                    <tematZwykly>1</tematZwykly>
+                </temat>
+            </dzial>
+    </forum>
+    <sklep>
+        <kategoria_sklep nazwa_sklep="koszulka">
+            <autor>autor1</autor>
+            <seria>seria1</seria>
+            <cena>56</cena>
+            <cena_wysylki>12</cena_wysylki>
+            <czas_oczekiwania>15 dni</czas_oczekiwania>
+        </kategoria_sklep>
+        <kategoria_sklep nazwa_sklep="koszulka">
+            <autor>autor1</autor>
+            <seria>seria2</seria>
+            <cena>40</cena>
+            <cena_wysylki>12</cena_wysylki>
+            <czas_oczekiwania>15 dni</czas_oczekiwania>
+        </kategoria_sklep>
+        <kategoria_sklep nazwa_sklep="kubek">
+            <autor>autor2</autor>
+            <seria>seria1</seria>
+            <cena>20</cena>
+            <cena_wysylki>6</cena_wysylki>
+            <czas_oczekiwania>15 dni</czas_oczekiwania>
+        </kategoria_sklep>
+        <kategoria_sklep nazwa_sklep="plakat">
+            <autor>autor3</autor>
+            <seria>seria3</seria>
+            <cena>7</cena>
+            <cena_wysylki>2</cena_wysylki>
+            <czas_oczekiwania>15 dni</czas_oczekiwania>
+        </kategoria_sklep>
+    </sklep>
+</strona>
+</project>
